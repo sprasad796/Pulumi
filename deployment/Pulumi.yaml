@@ -1,0 +1,12 @@
+name: pulumi-kubernetes-cmd
+description: A minimal Kubernetes python pulumi project
+runtime:
+  nodejs
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: kubernetes-python
