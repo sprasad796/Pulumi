@@ -1,0 +1,25 @@
+strict digraph {
+    Resource0 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::pulumi:pulumi:Stack::pulumi-kubernetes-cmd-pulumi-kubernetes-cmd"];
+    Resource1 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::pulumi:providers:docker::default_4_6_2"];
+    Resource2 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::docker:index/remoteImage:RemoteImage::backend_image"];
+    Resource2 -> Resource0 [color = "#AA6639"];
+    Resource2 -> Resource3 [color = "#246C60", label = "image"];
+    Resource4 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::docker:index/remoteImage:RemoteImage::frontend_image"];
+    Resource4 -> Resource0 [color = "#AA6639"];
+    Resource4 -> Resource5 [color = "#246C60", label = "image"];
+    Resource6 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::docker:index/remoteImage:RemoteImage::mongo_image"];
+    Resource6 -> Resource0 [color = "#AA6639"];
+    Resource6 -> Resource7 [color = "#246C60", label = "image"];
+    Resource8 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::docker:index/network:Network::network"];
+    Resource8 -> Resource0 [color = "#AA6639"];
+    Resource8 -> Resource5 [color = "#246C60", label = "networksAdvanced"];
+    Resource8 -> Resource7 [color = "#246C60", label = "networksAdvanced"];
+    Resource8 -> Resource3 [color = "#246C60", label = "networksAdvanced"];
+    Resource5 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::docker:index/container:Container::fontend_container"];
+    Resource5 -> Resource0 [color = "#AA6639"];
+    Resource7 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::docker:index/container:Container::mongo_container"];
+    Resource7 -> Resource0 [color = "#AA6639"];
+    Resource7 -> Resource3 [color = "#246C60"];
+    Resource3 [label="urn:pulumi:pulumi-kubernetes-cmd::pulumi-kubernetes-cmd::docker:index/container:Container::backend_container"];
+    Resource3 -> Resource0 [color = "#AA6639"];
+}

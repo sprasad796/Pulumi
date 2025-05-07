@@ -1,0 +1,12 @@
+config:
+  #pulumi-kubernetes-cmd:mongoHost: mongodb://mongo:27017
+  pulumi-kubernetes-cmd:mongoHost: mongo
+  pulumi-kubernetes-cmd:database: cart
+  pulumi-kubernetes-cmd:nodeEnvironment: development
+  pulumi-kubernetes-cmd:protocol: http://
+  pulumi-kubernetes-cmd:backendPort: "3000"
+  pulumi-kubernetes-cmd:frontendPort: "3001"
+  pulumi-kubernetes-cmd:mongoPort: "27017"
+  pulumi-kubernetes-cmd:mongoUsername: admin
+  pulumi-kubernetes-cmd:mongoPassword:
+    secure: AAABALJZe51xZ8CWfmpSZeMLGceGogo8uDaWnRgydb5OalpC4VA=

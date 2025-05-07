@@ -1,0 +1,17 @@
+{
+    "sourceContext": {
+        "git": {
+            "repoURL": "https://github.com/pulumi/deploy-demos.git",
+            "branch": "main",
+            "repoDir": "pulumi-programs/simple-resource"
+        }
+    },
+    "operationContext": {
+        "environmentVariables": {
+            "TEST_VAR": "foo",
+            "SECRET_VAR": {
+                "secret": "my-secret"
+            }
+        }
+    }
+}
