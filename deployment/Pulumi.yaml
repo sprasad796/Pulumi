@@ -1,5 +1,6 @@
 name: pulumi-kubernetes-cmd
 description: A minimal Kubernetes python pulumi project
+runtime: nodejs
 runtime:
   name: python
   options:
