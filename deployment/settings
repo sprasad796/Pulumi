@@ -1,9 +1,10 @@
 {
+    "operation": "update/preview/refresh/destroy",
     "sourceContext": {
         "git": {
-            "repoURL": "https://github.com/pulumi/deploy-demos.git",
-            "branch": "main",
-            "repoDir": "pulumi-programs/simple-resource"
+            "repoURL": "https://github.com/sprasad796/Pulumi.git",
+            "branch": "refs/heads/main",
+            "repoDir": "pulumi"
         }
     },
     "operationContext": {
