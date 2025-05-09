@@ -1,24 +1,17 @@
 {
-    "operation": "update/preview/refresh/destroy",
+    "operation": "preview",
+    "inheritSettings": false,
     "sourceContext": {
         "git": {
             "repoURL": "https://github.com/sprasad796/Pulumi.git",
             "branch": "refs/heads/main",
-            "repoDir": "pulumi"
         }
     },
     "operationContext": {
-  	"preRunCommands": [
-    		"node --version",
-    		"curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash",
-    		"nvm use 17 && yarn"
-  	],
-        "environmentVariables": {
-    	    "NODE_VERSION": "17"
-            "TEST_VAR": "foo",
-            "SECRET_VAR": {
-                "secret": "my-secret"
-            }
+	"environmentVariables": {
+            "PULUMI_HOME": "/Users/keshakumar/Pulumi",
+            "PULUMI_BACKEND_URL": "https://api.pulumi.com",
+	    "secret": false,
         }
     }
 }
