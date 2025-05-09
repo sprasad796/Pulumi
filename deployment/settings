@@ -13,9 +13,6 @@
     		"curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash",
     		"nvm use 17 && yarn"
   	],
-  	"options": {
-    		"skipInstallDependencies": true
-  	}
         "environmentVariables": {
     	    "NODE_VERSION": "17"
             "TEST_VAR": "foo",
