@@ -10,4 +10,5 @@ config:
   pulumi-kubernetes-cmd:mongoUsername: admin
   pulumi-kubernetes-cmd:mongoPassword:
     secure: AAABALJZe51xZ8CWfmpSZeMLGceGogo8uDaWnRgydb5OalpC4VA=
-  pulumi-kubernetes-cmd:PULUMI_ACCESS_TOKEN: WRITE
+  pulumi-kubernetes-cmd:PULUMI_ACCESS_TOKEN:
+    secure: AAABAL33qH94i58aaH+Fyfv1FDb/CCAUawDUJq1kZjFm8ZeCPq/tscMr3xSSdZh1vu/WQpLos8r8p7Vjd2W/WsnVKFmxJWyY6z4bdw==
