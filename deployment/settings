@@ -1,6 +1,5 @@
 {
     "operation": "preview",
-    "inheritSettings": false,
     "sourceContext": {
         "git": {
             "repoURL": "https://github.com/sprasad796/Pulumi.git",
@@ -9,9 +8,6 @@
     },
     "operationContext": {
 	"environmentVariables": {
-            "PULUMI_HOME": "/Users/keshakumar/Pulumi",
-            "PULUMI_BACKEND_URL": "https://api.pulumi.com",
-	    "secret": false,
         }
     }
 }
