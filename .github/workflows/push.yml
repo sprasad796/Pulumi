@@ -16,6 +16,6 @@ jobs:
       - uses: pulumi/actions@v6
         with:
           command: up
-          stack-name: pulumi_sprasad_iac/pulumi_sprasad_iac/pulumi-kubernetes-cmd# When using an individual account, only use stack-name.
+          stack-name: pulumi_sprasad_iac/pulumi-kubernetes-cmd# When using an individual account, only use stack-name.
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
