@@ -6,8 +6,15 @@ To learn more about the Pulumi Kuberenets visit the [Pulumi documentation][https
 - [Pulumi Kubernetes SDK]
   - [Overview](#overview)
     - [What is Pulumi?](#what-is-pulumi)
-    - [When To Use the Pulumi Kubernetes Operator?](#when-to-use-the-pulumi-kubernetes-operator)
+    - [Creating Resources on Pulumi Kubernetes?](#creating-resources-on-kubernetes)
     - [Prerequisites](#prerequisites)
+      - [Pulumi CLI](pulumi-cli)
+      - [Pulumi Cloud Account](pulumi-cloud-account)
+      - [Run Minikube Cluster](run-minikube-cluster)
+        - [minikube download](minikube-download)
+      - [The Kubernets command line tool kubectl](kubernetes-command-line-tool)
+        - [kubectl download](kubectl-download)
+      - [Python 3.X is installed] (python-install) 
   - [Deploy the Operator](#deploy-the-operator)
     - [Using Helm](#using-helm)
     - [Using Pulumi](#using-pulumi)
@@ -23,48 +30,40 @@ To learn more about the Pulumi Kuberenets visit the [Pulumi documentation][https
 
 Pulumi is an open source infrastructure-as-code tool for creating, deploying, and managing cloud infrastructure in the programming language of your choice. If you are new to Pulumi, please consider visiting the [getting started](https://www.pulumi.com/docs/get-started/) first to familiarize yourself with Pulumi and concepts such as [Pulumi stacks](https://www.pulumi.com/docs/intro/concepts/stack/) and [backends](https://www.pulumi.com/docs/intro/concepts/state/).
 
-### When To Use the Pulumi Kubernetes Operator?
+### Creating Resources on Kubernetes
 
-The Pulumi Kubernetes Operator enables Kubernetes users to create a Pulumi Stack as a first-class Kubernetes API resource, and use the StackController to drive the updates. It allows users to adopt a GitOps workflow for managing their cloud infrastructure using Pulumi. This infrastructure includes Kubernetes resources in addition to over 60 cloud providers including AWS, Azure, and Google Cloud. The operator provides an alternative to Pulumi's other CI/CD integrations such as [Github Actions](https://www.pulumi.com/docs/guides/continuous-delivery/github-actions/), [Gitlab CI](https://www.pulumi.com/docs/guides/continuous-delivery/gitlab-ci/), [Jenkins](https://www.pulumi.com/docs/guides/continuous-delivery/jenkins/) etc. See the full list of Pulumi's CI/CD integrations [here](https://www.pulumi.com/docs/guides/continuous-delivery/). Since the Pulumi Kubernetes Operator can be deployed on any Kubernetes cluster, it provides turnkey GitOps functionality for Pulumi users running in self-hosted or restricted settings. The [Kubernetes Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/), lends itself nicely to automation scenarios by driving to the specified state and automatically retrying if transient failures are encountered.
+In Pulumi, resources represent the fundamental units that make up your infrastructure, such as virtual machines, networks, storage and databases. A resource is used to define and manage an infrastructure object in your Pulumi configuration. (https://www.pulumi.com/tutorials/creating-resources-kubernetes/). In this repo, resources has been created and hosted on simple Nginx server hosted Kubernets and further deployed to make Nginx deployment accessible. 
 
 ### Prerequisites
 
-The following steps should be completed before using the operator:
+The following steps should be completed before start using Kubernetes:
 
-## Deploy the Operator
+## Pulumi CLI
 
-Deploy the operator to a Kubernetes cluster.
+Download and install Pulumi (https://www.pulumi.com/docs/iac/download-install/)
 
-You can use an existing cluster, or [get started](https://www.pulumi.com/docs/get-started/kubernetes/) by creating a new [managed Kubernetes cluster](https://www.pulumi.com/docs/tutorials/kubernetes/#clusters). We will assume that your target Kubernetes cluster is already created and you have configured `kubectl` to point to it.
+## Pulumi Cloud account
+Create login on (https://app.pulumi.com/) and navigate to app.pulumi.com. 
+GitHub identity used as to sign up. 
 
-### Using Helm
+## Run Minikube Cluster
+minikube is local Kubernets, focusing on making it easy to learn and develop for Kubernetes.
+Docker container environment is used to start ```minikube start```
 
-A Helm chart is provided in `deploy/helm/pulumi-operator` and is also published to [Artifact Hub](https://artifacthub.io/packages/helm/pulumi-kubernetes-operator/pulumi-kubernetes-operator).
+# minikube download
+To configure and Install minikube
+(https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary+download)
 
-```bash
-helm install --create-namespace -n pulumi-kubernetes-operator pulumi-kubernetes-operator oci://ghcr.io/pulumi/helm-charts/pulumi-kubernetes-operator
-```
+On successful installation
+Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 
-### Using Pulumi
+## The Kubernets command line tool kubectl
+# kubetctl download
+To configure and install kubectl
+(https://kubernetes.io/docs/tasks/tools/)
 
-First, make sure you have installed Pulumi as described in ["Download & install Pulumi"](https://www.pulumi.com/docs/iac/download-install/).
+## Python 3.X is installed
 
-Use the Pulumi program located in `deploy/deploy-operator-yaml` to install the Operator cluster-wide with default settings.
-
-```bash
-cd deploy/deploy-operator-yaml
-pulumi up
-```
-
-### Dev Install
-
-A simple "quickstart" installation manifest is provided for non-production environments.
-
-Install with `kubectl`:
-
-```
-kubectl apply -f https://raw.githubusercontent.com/pulumi/pulumi-kubernetes-operator/refs/tags/v2.0.0/deploy/quickstart/install.yaml
-```
 
 ### From Source
 
