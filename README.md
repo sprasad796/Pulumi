@@ -18,6 +18,7 @@ To learn more about the Pulumi Kuberenets visit the [Pulumi documentation][https
         - [kubectl download](kubectl-download)
       - [Python 3.X is installed] (python-install) 
   - [Pulumi and Kubernetes Create Project](Pulumi-and-Kubernetes-Create-Project)
+  - [Create Infrastructure with Pulumi Deployments](Create-Infrastructure-with-Pulumi-Deployments)  
     
 ## What is Pulumi?
 
@@ -73,4 +74,19 @@ If the kubeconfig file is not in either of these locations, Pulumi will not find
 
 Verify the cluster is configured and up by running kubectl get pods.
 ## Python 3.X is installed
+## Create Infrastructure with Pulumi Deployments
+Pulumi deployments is a fully managed service designed to automate the infrastruture. It provides the building blocks designed for scaling cloud ifra with tools to power public and private cloud platforms, APIs and self service infra portals. Deployment can be triggered through multiple methods
+1. REST API
+2. Integrating with github (Push to deploy)
+3. Initiate from Pulumi cloud console.
+
+# Create Organization
+Organizations are a space to collaborate on shared project and stacks.
+Select the create an organization and provide it with the name.
+You can join an organization or can invite members to join an organization.
+You can switch between organization.
+
+# Create Stack
+Every Pulumi program is deployed to stack. A stack is an isolated, independent and configurable instance of pulumi program.
+A project can have as many stack you need. 
 
