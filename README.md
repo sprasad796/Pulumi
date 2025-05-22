@@ -18,7 +18,10 @@ To learn more about the Pulumi Kuberenets visit the [Pulumi documentation][https
         - [kubectl download](kubectl-download)
       - [Python 3.X is installed] (python-install) 
   - [Pulumi and Kubernetes Create Project](Pulumi-and-Kubernetes-Create-Project)
-  - [Create Infrastructure with Pulumi Deployments](Create-Infrastructure-with-Pulumi-Deployments)  
+  - [Create Infrastructure with Pulumi Deployments](Create-Infrastructure-with-Pulumi-Deployments)
+  - [Create Organization](Create-Organization)
+  - [Create Stack](Create-Stack)
+  - [Start Deployment](Start-Deployment)
     
 ## What is Pulumi?
 
@@ -89,4 +92,38 @@ You can switch between organization.
 # Create Stack
 Every Pulumi program is deployed to stack. A stack is an isolated, independent and configurable instance of pulumi program.
 A project can have as many stack you need. 
+`keshakumar@Keshas-Laptop iac_project_1 % pulumi stack init iac_project_1-dev
+Created stack 'iac_project_1-dev'
+` 
+If you get the error 
+`Error:
+Diagnostics:
+  pulumi:pulumi:Stack (iac_project_1-iac_project_1-dev):
+    error: update failed
+  kubernetes:core/v1:Namespace (webserver):
+    error: configured Kubernetes cluster is unreachable: unable to load Kubernetes client configuration from kubeconfig file. Make sure you have:
+    
+  set up the provider as per https://www.pulumi.com/registry/packages/kubernetes/installation-configuration/
+  invalid configuration: no configuration has been provided, try setting KUBERNETES_MASTER environment variable
+
+Before you begin: You need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster`
+
+2. Start the kubernetes
+   minikube start
+3. Set the minikube context
+keshakumar@Keshas-Laptop iac_project_1 % kubectl config get-contexts
+keshakumar@Keshas-Laptop iac_project_1 % export KUBECONFIG=~/.kube/config
+
+4. Stack clean up
+To Release the resources taken by “pulumi destroy”
+To delete the stack “pulumi stack rm $stack_name”
+
+# Start Deployment
+with github integration. After Pulumi github integration
+`pulumi org set-default sprasad_github_integration`
+
+Stack → settings → deploy → git 
+
+
+
 
